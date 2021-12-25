@@ -3,4 +3,5 @@ from Calculadora import Calculadora
 
 App = Tk()
 Calculadora(App)
+Calculadora.calcular(App)
 App.mainloop()
