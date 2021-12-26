@@ -3,5 +3,5 @@ from Calculadora import Calculadora
 
 App = Tk()
 Calculadora(App)
-Calculadora.calcular(App)
+#Calculadora.inserir(App)
 App.mainloop()

@@ -5,27 +5,25 @@ class Calculadora:
     def __init__(self, App):
         #Configurações da janela principal
         cor_frame = "#092909"
-        texto = StringVar()
-        texto = self.calcular()
         App.title("Calculadora")
         App.geometry("240x320")
         App.config(bg=cor_frame)
+        texto = StringVar()
+        
 
-        self.frame_tela(App,texto)
+        self.frame_tela(App, texto)
         self.frame_botoes(App)
 
-    def frame_tela(self,App, texto):
+    def frame_tela(self,App,texto):
         #Criando o frame para a tela e configurando
         cor_frame = "#2c332d"
         #texto = StringVar()
         frame_tela = Frame(App, width=240, height=60, bg=cor_frame)
         frame_tela.grid(row=0, column=0)
-
-        #texto = self.calcular()
-        
-        label = Label(frame_tela, text=texto, width=16, height=2, padx=7, relief=FLAT, anchor="e", justify=RIGHT, font=('Ivy 18'), bg=cor_frame, fg="#ffffff")
+    
+        label = Label(frame_tela, textvariable=texto, width=16, height=2, padx=7, relief=FLAT, anchor="e", justify=RIGHT, font=('Ivy 18'), bg=cor_frame, fg="#ffffff")
         label.place(x=0, y=0)
-
+        #print(self.texto)
         
     def frame_botoes(self, App):
         #Criando o frame dos botoes
@@ -38,6 +36,7 @@ class Calculadora:
 
         b1 = self.cria_botao(frame_botoes, "C", 16, 2, 0, 0, None, None)
         b2 = self.cria_botao(frame_botoes, "%", 8, 2, 120, 0, None, None)
+        b2.config(command=lambda: self.inserir())
         b3 = self.cria_botao(frame_botoes, "/", 8, 2, 180, 0, fundo, fonte)
 
         b4 = self.cria_botao(frame_botoes, "7", 8, 2, 0, 40, None, None)
@@ -65,6 +64,8 @@ class Calculadora:
         botao.place(x=x, y=y)
         return botao
 
-    def calcular(self):
-        a = '9/9'
-        return eval(a)
+    def inserir(self):
+        #valor = 'a'
+        #texto.set(valor)  
+        #print(self.texto)  
+        pass    
