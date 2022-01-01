@@ -15,6 +15,7 @@ class Calculadora:
 
         App.title("Calculadora")
         App.geometry("240x320")
+        App.resizable(0,0)
         App.config(bg=cor_frame)
         
         #Variavel de tela
@@ -71,59 +72,62 @@ class Calculadora:
         cor_botao_limpar = "#5600a1"
         
         #Criando o botoes e definido as funções
-        b1 = self.cria_botao(frame_botoes, "C", 16, 2, 0, 0, cor_botao_limpar, cor_fonte)
-        b1["command"] = lambda: self.limpar_tela()
+        botoa_limpa_tela = self.cria_botao(frame_botoes, "C", 8, 2, 0, 0, cor_botao_limpar, cor_fonte)
+        botoa_limpa_tela["command"] = lambda: self.limpar_tela()
 
-        b2 = self.cria_botao(frame_botoes, "%", 8, 2, 120, 0, None, None)
-        b2["command"] = lambda: self.inserir("%")
+        botao_apagar = self.cria_botao(frame_botoes, "DEL", 8, 2, 60, 0, cor_fundo, cor_fonte)
+        botao_apagar["command"] = lambda: self.apagar()
 
-        b3 = self.cria_botao(frame_botoes, "/", 8, 2, 180, 0, cor_fundo, cor_fonte)
-        b3["command"] = lambda: self.inserir("/")
+        botao_modulo = self.cria_botao(frame_botoes, "%", 8, 2, 120, 0, cor_fundo, cor_fonte)
+        botao_modulo["command"] = lambda: self.inserir("%")
 
-        b4 = self.cria_botao(frame_botoes, "7", 8, 2, 0, 40, None, None)
-        b4["command"] = lambda: self.inserir("7")
+        botao_divisao = self.cria_botao(frame_botoes, "/", 8, 2, 180, 0, cor_fundo, cor_fonte)
+        botao_divisao["command"] = lambda: self.inserir("/")
+        
+        botao_sete = self.cria_botao(frame_botoes, "7", 8, 2, 0, 40, None, None)
+        botao_sete["command"] = lambda: self.inserir("7")
+        
+        botao_cinco = self.cria_botao(frame_botoes, "8", 8, 2, 60, 40, None, None)
+        botao_cinco["command"] = lambda: self.inserir("8")
+        
+        botao_nove = self.cria_botao(frame_botoes, "9", 8, 2, 120, 40, None, None)
+        botao_nove["command"] = lambda: self.inserir("9")
+        
+        botao_multiplica = self.cria_botao(frame_botoes, "*", 8, 2, 180, 40, cor_fundo, cor_fonte)
+        botao_multiplica["command"] = lambda: self.inserir("*")
 
-        b5 = self.cria_botao(frame_botoes, "8", 8, 2, 60, 40, None, None)
-        b5["command"] = lambda: self.inserir("8")
+        botao_quatro = self.cria_botao(frame_botoes, "4", 8, 2, 0, 80, None, None)
+        botao_quatro["command"] = lambda: self.inserir("4")
+        
+        botao_cinco = self.cria_botao(frame_botoes, "5", 8, 2, 60, 80, None, None)
+        botao_cinco["command"] = lambda: self.inserir("5")
 
-        b6 = self.cria_botao(frame_botoes, "9", 8, 2, 120, 40, None, None)
-        b6["command"] = lambda: self.inserir("9")
+        botao_seis = self.cria_botao(frame_botoes, "6", 8, 2, 120, 80, None, None)
+        botao_seis["command"] = lambda: self.inserir("6")
 
-        b7 = self.cria_botao(frame_botoes, "*", 8, 2, 180, 40, cor_fundo, cor_fonte)
-        b7["command"] = lambda: self.inserir("*")
+        botao_soma = self.cria_botao(frame_botoes, "+", 8, 2, 180, 80, cor_fundo, cor_fonte)
+        botao_soma["command"] = lambda: self.inserir("+")
 
-        b8 = self.cria_botao(frame_botoes, "4", 8, 2, 0, 80, None, None)
-        b8["command"] = lambda: self.inserir("4")
+        botao_um = self.cria_botao(frame_botoes, "1", 8, 2, 0, 120, None, None)
+        botao_um["command"] = lambda: self.inserir("1")
 
-        b9 = self.cria_botao(frame_botoes, "5", 8, 2, 60, 80, None, None)
-        b9["command"] = lambda: self.inserir("5")
+        botao_dois = self.cria_botao(frame_botoes, "2", 8, 2, 60, 120, None, None)
+        botao_dois["command"] = lambda: self.inserir("2")
 
-        b10 = self.cria_botao(frame_botoes, "6", 8, 2, 120, 80, None, None)
-        b10["command"] = lambda: self.inserir("6")
+        botao_tres = self.cria_botao(frame_botoes, "3", 8, 2, 120, 120, None, None)
+        botao_tres["command"] = lambda: self.inserir("3")
 
-        b11 = self.cria_botao(frame_botoes, "+", 8, 2, 180, 80, cor_fundo, cor_fonte)
-        b11["command"] = lambda: self.inserir("+")
+        botao_subtracao = self.cria_botao(frame_botoes, "-", 8, 2, 180, 120, cor_fundo, cor_fonte)
+        botao_subtracao["command"] = lambda: self.inserir("-")
 
-        b12 = self.cria_botao(frame_botoes, "1", 8, 2, 0, 120, None, None)
-        b12["command"] = lambda: self.inserir("1")
+        botao_zero = self.cria_botao(frame_botoes, "0", 16, 2, 0, 160, None, None)
+        botao_zero["command"] = lambda: self.inserir("0")
 
-        b13 = self.cria_botao(frame_botoes, "2", 8, 2, 60, 120, None, None)
-        b13["command"] = lambda: self.inserir("2")
+        botao_ponto = self.cria_botao(frame_botoes, ".", 8, 2, 120, 160, None, None)
+        botao_ponto["command"] = lambda: self.inserir(".")
 
-        b14 = self.cria_botao(frame_botoes, "3", 8, 2, 120, 120, None, None)
-        b14["command"] = lambda: self.inserir("3")
-
-        b15 = self.cria_botao(frame_botoes, "-", 8, 2, 180, 120, cor_fundo, cor_fonte)
-        b15["command"] = lambda: self.inserir("-")
-
-        b16 = self.cria_botao(frame_botoes, "0", 16, 2, 0, 160, None, None)
-        b16["command"] = lambda: self.inserir("0")
-
-        b18 = self.cria_botao(frame_botoes, ".", 8, 2, 120, 160, None, None)
-        b18["command"] = lambda: self.inserir(".")
-
-        b19 = self.cria_botao(frame_botoes, "=", 8, 2, 180, 160, cor_fundo, cor_fonte)
-        b19["command"] = lambda: self.calcular()
+        botao_igual = self.cria_botao(frame_botoes, "=", 8, 2, 180, 160, cor_fundo, cor_fonte)
+        botao_igual["command"] = lambda: self.calcular()
                
     def cria_botao(self, frame_botoes, caracter, largura, altura, px, py, cor_fundo, cor_fonte):
         """Função cria os botoes, os configura e os retorna
@@ -169,3 +173,8 @@ class Calculadora:
         Função apaga o texto do label
         """
         self.texto.set("")
+    
+    def apagar(self):
+        texto = self.texto.get()
+        texto = texto[:-1]
+        self.texto.set(texto)
